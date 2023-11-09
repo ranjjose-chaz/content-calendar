@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import dev.chaz.contentcalendar.model.Author;
 import org.springframework.stereotype.Repository;
 
 import dev.chaz.contentcalendar.model.Content;
@@ -39,7 +40,8 @@ public class ContentCollectionRepository {
          Type.ARTICLE, 
          LocalDateTime.now(),
           null, 
-          "");
+          "",
+                new Author(null, "Chaz"));
 
           Content c2 = new Content(2, 5,
         "രണ്ടാം ബ്ലോഗം ",
@@ -48,7 +50,8 @@ public class ContentCollectionRepository {
          Type.ARTICLE, 
          LocalDateTime.now(),
           null, 
-          "");
+          "",
+                  new Author(null, "Jose"));
 
 
         contents.add(c1);

@@ -80,17 +80,17 @@ public class ContentController {
 
     @GetMapping("/filter2/{keyword}")
     public List<Content>  findAllByDesc(@PathVariable String keyword) {
-        return repository.findAllByDescContains(keyword);
+        return repository.findAllByDescriptionContains(keyword);
     }
 
     @GetMapping("/filter3/{key1}/{key2}")
     public List<Content>  findAllByTitleAndDesc(@PathVariable String key1, @PathVariable String key2) {
-        return repository.findAllByDescContainsAndTitleContains(key1, key2);
+        return repository.findAllByDescriptionContainsAndTitleContains(key1, key2);
     }
 
     @GetMapping("/filter4/{key}")
     public List<Content>  findAllByTitleOrDesc(@PathVariable String key) {
-        return repository.findAllByDescContainsOrTitleContains(key, key);
+        return repository.findAllByDescriptionContainsOrTitleContains(key, key);
     }
 
     @GetMapping("/filter5/")
@@ -105,8 +105,5 @@ public class ContentController {
     public List<Content> filterByStatus(@PathVariable Status status){
         return repository.filterByStatus(status);
     }
-
-
-    
         
 }
